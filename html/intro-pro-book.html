@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Introduction to Computers, the Internet and Java" />
+  <meta name="author" content="Rafael García Cabrera [IES Virgen del Carmen]" />
+  <title>Introduction to Computers, the Internet and Java</title>
+  <style type="text/css">code{white-space: pre; background-color: lightgrey;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+<link rel="stylesheet" href="../lib/backtop/backtop.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="../lib/backtop/backtop.js"></script>
+</head>
+<body>
+<header>
+<h1 class="title">Introduction to Computers, the Internet and Java</h1>
+<h2 class="author">Rafael García Cabrera [IES Virgen del Carmen]</h2>
+<h3 class="date">September 2018</h3>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#reference"><span class="toc-section-number">1</span> Reference</a><ul>
+<li><a href="#book"><span class="toc-section-number">1.1</span> Book</a></li>
+<li><a href="#sample-chapter-download"><span class="toc-section-number">1.2</span> Sample Chapter download</a></li>
+<li><a href="#slide-presentation"><span class="toc-section-number">1.3</span> Slide Presentation</a></li>
+<li><a href="#markdownslides"><span class="toc-section-number">1.4</span> MarkdownSlides</a></li>
+</ul></li>
+<li><a href="#introduction"><span class="toc-section-number">2</span> Introduction</a><ul>
+<li><a href="#java"><span class="toc-section-number">2.1</span> Java</a></li>
+<li><a href="#wora"><span class="toc-section-number">2.2</span> WORA</a></li>
+<li><a href="#java-editions"><span class="toc-section-number">2.3</span> Java Editions</a></li>
+<li><a href="#hello-world"><span class="toc-section-number">2.4</span> Hello World</a></li>
+</ul></li>
+<li><a href="#hardware-and-software"><span class="toc-section-number">3</span> Hardware and Software</a><ul>
+<li><a href="#moores-law"><span class="toc-section-number">3.1</span> Moore’s Law</a></li>
+<li><a href="#video-50-years-of-moores-law"><span class="toc-section-number">3.2</span> Video: 50 Years of Moore’s Law</a></li>
+</ul></li>
+<li><a href="#computer-organization"><span class="toc-section-number">4</span> Computer Organization</a><ul>
+<li><a href="#logical-units"><span class="toc-section-number">4.1</span> Logical Units</a></li>
+<li><a href="#von-neumann-architecture"><span class="toc-section-number">4.2</span> Von Neumann architecture</a></li>
+<li><a href="#input-unit"><span class="toc-section-number">4.3</span> Input Unit</a></li>
+<li><a href="#output-unit"><span class="toc-section-number">4.4</span> Output Unit</a></li>
+<li><a href="#memory-unit"><span class="toc-section-number">4.5</span> Memory unit</a></li>
+<li><a href="#alu"><span class="toc-section-number">4.6</span> ALU</a></li>
+<li><a href="#cpu"><span class="toc-section-number">4.7</span> CPU</a></li>
+<li><a href="#secondary-storage-unit"><span class="toc-section-number">4.8</span> Secondary storage unit</a></li>
+<li><a href="#byte-measurements"><span class="toc-section-number">4.9</span> Byte measurements</a></li>
+</ul></li>
+<li><a href="#data-hierarchy"><span class="toc-section-number">5</span> Data Hierarchy</a><ul>
+<li><a href="#bits"><span class="toc-section-number">5.1</span> Bits</a></li>
+<li><a href="#characters"><span class="toc-section-number">5.2</span> Characters</a></li>
+<li><a href="#fields"><span class="toc-section-number">5.3</span> Fields</a></li>
+<li><a href="#records"><span class="toc-section-number">5.4</span> Records</a></li>
+<li><a href="#files"><span class="toc-section-number">5.5</span> Files</a></li>
+<li><a href="#database"><span class="toc-section-number">5.6</span> Database</a></li>
+<li><a href="#big-data"><span class="toc-section-number">5.7</span> Big Data</a></li>
+</ul></li>
+<li><a href="#machine-languages-assembly-languages-and-high-level-languages"><span class="toc-section-number">6</span> Machine Languages, Assembly Languages and High-Level Languages</a><ul>
+<li><a href="#types-of-programming-languages"><span class="toc-section-number">6.1</span> Types of programming languages</a></li>
+<li><a href="#machine-languages"><span class="toc-section-number">6.2</span> Machine Languages</a></li>
+<li><a href="#assembly-languages-and-assemblers"><span class="toc-section-number">6.3</span> Assembly Languages and Assemblers</a></li>
+<li><a href="#high-level-languages-and-compilers"><span class="toc-section-number">6.4</span> High-Level Languages and Compilers</a></li>
+<li><a href="#high-level-languages-and-interpreters"><span class="toc-section-number">6.5</span> High-Level Languages and Interpreters</a></li>
+</ul></li>
+<li><a href="#introduction-to-object-technology"><span class="toc-section-number">7</span> Introduction to Object Technology</a><ul>
+<li><a href="#objects"><span class="toc-section-number">7.1</span> Objects</a></li>
+<li><a href="#automobile-as-an-object"><span class="toc-section-number">7.2</span> Automobile as an Object</a></li>
+<li><a href="#methods-and-classes"><span class="toc-section-number">7.3</span> Methods and Classes</a></li>
+<li><a href="#instantiation"><span class="toc-section-number">7.4</span> Instantiation</a></li>
+<li><a href="#reuse"><span class="toc-section-number">7.5</span> Reuse</a></li>
+<li><a href="#messages-and-method-calls"><span class="toc-section-number">7.6</span> Messages and Method Calls</a></li>
+<li><a href="#attributes-and-instance-variables"><span class="toc-section-number">7.7</span> Attributes and Instance Variables</a></li>
+<li><a href="#encapsulation-and-information-hiding"><span class="toc-section-number">7.8</span> Encapsulation and Information Hiding</a></li>
+<li><a href="#inheritance"><span class="toc-section-number">7.9</span> Inheritance</a></li>
+<li><a href="#interfaces"><span class="toc-section-number">7.10</span> Interfaces</a></li>
+<li><a href="#object-oriented-analysis-and-design"><span class="toc-section-number">7.11</span> Object-Oriented Analysis and Design</a></li>
+<li><a href="#uml-unified-modeling-language"><span class="toc-section-number">7.12</span> UML (Unified Modeling Language)</a></li>
+</ul></li>
+<li><a href="#operating-systems"><span class="toc-section-number">8</span> Operating Systems</a><ul>
+<li><a href="#what-is-an-operating-system"><span class="toc-section-number">8.1</span> What is an Operating System?</a></li>
+<li><a href="#popular-operating-systems"><span class="toc-section-number">8.2</span> Popular Operating Systems</a></li>
+<li><a href="#windows"><span class="toc-section-number">8.3</span> Windows</a></li>
+<li><a href="#linux"><span class="toc-section-number">8.4</span> Linux</a></li>
+<li><a href="#apples-macos-and-ios"><span class="toc-section-number">8.5</span> Apple’s macOS and iOS</a></li>
+<li><a href="#googles-android"><span class="toc-section-number">8.6</span> Google’s Android</a></li>
+</ul></li>
+<li><a href="#programming-languages"><span class="toc-section-number">9</span> Programming Languages</a><ul>
+<li><a href="#some-programming-languages"><span class="toc-section-number">9.1</span> Some programming languages</a></li>
+<li><a href="#java-1"><span class="toc-section-number">9.2</span> Java</a></li>
+<li><a href="#java-class-libraries"><span class="toc-section-number">9.3</span> Java Class Libraries</a></li>
+</ul></li>
+<li><a href="#a-typical-java-development-environment"><span class="toc-section-number">10</span> A Typical Java Development Environment</a><ul>
+<li><a href="#five-phases"><span class="toc-section-number">10.1</span> Five phases</a></li>
+<li><a href="#phase-1-creating-a-program"><span class="toc-section-number">10.2</span> Phase 1: Creating a Program</a></li>
+<li><a href="#phase-2-compiling-a-java-program-into-bytecodes"><span class="toc-section-number">10.3</span> Phase 2: Compiling a Java Program into Bytecodes</a></li>
+<li><a href="#phase-3-loading-a-program-into-memory"><span class="toc-section-number">10.4</span> Phase 3: Loading a Program into Memory</a></li>
+<li><a href="#phase-4-bytecode-verification"><span class="toc-section-number">10.5</span> Phase 4: Bytecode Verification</a></li>
+<li><a href="#phase-5-execution"><span class="toc-section-number">10.6</span> Phase 5: Execution</a></li>
+<li><a href="#problems-that-may-occur-at-execution-time"><span class="toc-section-number">10.7</span> Problems That May Occur at Execution Time</a></li>
+</ul></li>
+<li><a href="#internet-and-world-wide-web"><span class="toc-section-number">11</span> Internet and World Wide Web</a><ul>
+<li><a href="#arpanet"><span class="toc-section-number">11.1</span> ARPANET</a></li>
+<li><a href="#internet-a-network-of-networks"><span class="toc-section-number">11.2</span> Internet: A Network of Networks</a></li>
+<li><a href="#world-wide-web-making-the-internet-user-friendly"><span class="toc-section-number">11.3</span> World Wide Web: Making the Internet User-Friendly</a></li>
+<li><a href="#web-services-and-mashups"><span class="toc-section-number">11.4</span> Web Services and Mashups</a></li>
+<li><a href="#internet-of-things"><span class="toc-section-number">11.5</span> Internet of Things</a></li>
+</ul></li>
+<li><a href="#software-technologies"><span class="toc-section-number">12</span> Software Technologies</a><ul>
+<li><a href="#technologies"><span class="toc-section-number">12.1</span> Technologies</a></li>
+<li><a href="#software-product-release-terminology"><span class="toc-section-number">12.2</span> Software product-release terminology</a></li>
+</ul></li>
+<li><a href="#getting-your-questions-answered"><span class="toc-section-number">13</span> Getting Your Questions Answered</a><ul>
+<li><a href="#online-forums"><span class="toc-section-number">13.1</span> Online forums</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="reference"><span class="header-section-number">1</span> Reference</h1>
+<h2 id="book"><span class="header-section-number">1.1</span> Book</h2>
+<div class="columns">
+<div class="column" style="background-image:url(&#39;../img/jhtp11_cover.jpg&#39;); background-size:contain; background-position:center; background-repeat:no-repeat;">
+
+</div><div class="column">
+<p><strong>Java How to Program: Early Objects, 11th Edition</strong>.</p>
+<p>Book Website:</p>
+<ul>
+<li><a href="https://media.pearsoncmg.com/bc/abp/cs-resources/products/product.html#product,isbn=0134743350">Pearson Higher Education</a></li>
+<li><a href="http://www.deitel.com/Books/Java/JavaHowtoProgram11e/tabid/3683/Default.aspx">DEITEL</a></li>
+</ul>
+</div>
+</div>
+<h2 id="sample-chapter-download"><span class="header-section-number">1.2</span> Sample Chapter download</h2>
+<p><a href="https://media.pearsoncmg.com/ph/esm/deitel/java_htpeo_11/cw/content/sample-chapters/jhtp_01_Intro.pdf"><strong>Chapter 1: Introduction to Computers, the Internet and Java</strong></a></p>
+<figure>
+<img src="../img/jhtp11_cover.jpg" title="fig:Java How to Program: Early Objects, 11/E" alt="Java How to Program: Early Objects, 11/E" class="stretch" /><figcaption>Java How to Program: Early Objects, 11/E</figcaption>
+</figure>
+<h2 id="slide-presentation"><span class="header-section-number">1.3</span> Slide Presentation</h2>
+<p>Made with <a href="https://github.com/asanzdiego/markdownslides"><strong>MarkdownSlides</strong></a> <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a>: a script to create slides from MD files.</p>
+<p><strong>The program source code are licensed under a <a href="http://www.gnu.org/licenses/gpl.html">GPL 3.0</a></strong></p>
+<figure>
+<img src="../img/markdownslides.png" class="stretch" />
+</figure>
+<h2 id="markdownslides" data-background-image="../img/markdownslides.png" data-background-size="cover" data-background-repeat="no-repeat"><span class="header-section-number">1.4</span> MarkdownSlides</h2>
+<h1 id="introduction"><span class="header-section-number">2</span> Introduction</h1>
+<h2 id="java"><span class="header-section-number">2.1</span> Java</h2>
+<ul>
+<li><strong>Java</strong> is one of the world’s most widely used computer programming language, <a href="http://www.tiobe.com/tiobe-index/">TIOBE Index</a></li>
+<li>You’ll write instructions commanding computers to perform tasks</li>
+<li><strong>Software</strong> (the instructions you write) controls <strong>hardware</strong> (computers)</li>
+<li><strong>OOP, Object-oriented programming,</strong> today’s key programming methodology</li>
+</ul>
+<p><strong>Java</strong> supported this programming paradigms:</p>
+<ul>
+<li>procedural programming</li>
+<li>object-oriented programming</li>
+<li>generic programming</li>
+<li>functional programming with lambdas and streams</li>
+</ul>
+<h2 id="wora"><span class="header-section-number">2.2</span> WORA</h2>
+<blockquote>
+<p><strong>Write once, run anywhere</strong></p>
+</blockquote>
+<figure>
+<img src="../img/duke.png" title="https://en.wikipedia.org/wiki/File:Duke_(Java_mascot)_waving.svg" class="stretch" />
+</figure>
+<h2 id="java-editions"><span class="header-section-number">2.3</span> Java Editions</h2>
+<p><strong>Java</strong> is for developing cross-platform, general-purpose applications.</p>
+<ul>
+<li><strong>JSE (Java Standard Edition)</strong>: contains the capabilities needed to develop desktop and server applications.</li>
+<li><strong>JEE (Java Enterprise Edition)</strong>: is geared toward developing large-scale, distributed networking applications and web-based applications.</li>
+<li><strong>JME (Java Micro Edition)</strong>: a subset of Java SE geared toward developing applications for resource-constrained embedded devices, such as smartwatches, television set-top boxes…</li>
+</ul>
+<h2 id="hello-world"><span class="header-section-number">2.4</span> Hello World</h2>
+<pre><code>public class HelloWorld {
+   public static void main(String[] args) {
+     System.out.println(&quot;Hello World&quot;);
+   }
+}</code></pre>
+<h1 id="hardware-and-software"><span class="header-section-number">3</span> Hardware and Software</h1>
+<h2 id="moores-law"><span class="header-section-number">3.1</span> Moore’s Law</h2>
+<ul>
+<li>For many decades, hardware costs have fallen rapidly.</li>
+<li>Every year or two, the capacities of computers have approximately doubled inexpensively.</li>
+<li>Amount of <strong>memory</strong> and <strong>secondary storage</strong>, <strong>processor speeds</strong>, communications <strong>bandwidth</strong>.</li>
+</ul>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Gordon_Moore">Gordon Moore</a>, co-founder of Intel</p>
+</blockquote>
+<p><a href="https://www.intel.com/content/www/us/en/silicon-innovations/moores-law-technology.html">50 Years of Moore’s Law</a></p>
+<h2 id="video-50-years-of-moores-law"><span class="header-section-number">3.2</span> Video: 50 Years of Moore’s Law</h2>
+<iframe class="stretch" src="//players.brightcove.net/734546229001/default_default/index.html?videoId=4144803153001" allowfullscreen frameborder="0">
+</iframe>
+<h1 id="computer-organization"><span class="header-section-number">4</span> Computer Organization</h1>
+<h2 id="logical-units"><span class="header-section-number">4.1</span> Logical Units</h2>
+<ul>
+<li>Input unit</li>
+<li>Output unit</li>
+<li>Memory unit</li>
+<li>Arithmetic and logic unit (<strong>ALU</strong>)</li>
+<li>Central processing unit (<strong>CPU</strong>)</li>
+<li>Secondary storage unit</li>
+</ul>
+<h2 id="von-neumann-architecture"><span class="header-section-number">4.2</span> Von Neumann architecture</h2>
+<p><a href="https://en.wikipedia.org/wiki/Von_Neumann_architecture"><img src="../img/Von_Neumann_Architecture.svg" title="https://en.wikipedia.org/wiki/Von_Neumann_architecture" class="stretch" /></a></p>
+<h2 id="input-unit"><span class="header-section-number">4.3</span> Input Unit</h2>
+<p>This “receiving” section obtains information (data and computer programs) from <strong>input devices</strong> and places it at the disposal of the other units for processing.</p>
+<ul>
+<li>keyboard</li>
+<li>touch screen</li>
+<li>mouse</li>
+<li>game controllers</li>
+<li>voice commands</li>
+<li>scanning images and bar codes, …</li>
+</ul>
+<h2 id="output-unit"><span class="header-section-number">4.4</span> Output Unit</h2>
+<p>This “shipping” section takes information the computer has processed and places it on various <strong>output devices</strong> to make it available for use outside the computer.</p>
+<ul>
+<li>screen</li>
+<li>printer</li>
+<li>secondary storage devices:
+<ul>
+<li>solid-state drives (SSDs)</li>
+<li>hard drives (HD)</li>
+<li>DVD drives and USB flash drives</li>
+</ul></li>
+<li>virtual reality devices, …</li>
+</ul>
+<h2 id="memory-unit"><span class="header-section-number">4.5</span> Memory unit</h2>
+<blockquote>
+<p>Memory, Primary Memory or RAM (Random Access Memory).</p>
+</blockquote>
+<p>This rapid-access, relatively low-capacity “warehouse” section retains information that has been entered through the <strong>input unit</strong>, making it immediately available for processing when needed. The memory unit also retains processed information until it can be placed on output devices by the <strong>output unit</strong>. Information in the memory unit is <strong>volatile</strong> (lost when the computer’s power is turned off).</p>
+<h2 id="alu"><span class="header-section-number">4.6</span> ALU</h2>
+<p>The <strong>Arithmetic and Logic Unit</strong> performs <em>calculations</em>, such as addition, subtraction, multiplication and division. It also contains the <em>decision</em> mechanisms that allow the computer, for example, to compare two items from the memory unit to determine whether they’re equal.</p>
+<p>In today’s systems, the <strong>ALU</strong> is implemented as part of the next logical unit, the <strong>CPU</strong>.</p>
+<h2 id="cpu"><span class="header-section-number">4.7</span> CPU</h2>
+<p>The <strong>Central Processing Unit</strong> coordinates and supervises the operation of the other sections. The <strong>CPU</strong> tells the <em>input unit</em> when information should be read into the <em>memory unit</em>, tells the <em>ALU</em> when information from the <em>memory unit</em> should be used in calculations and tells the <em>output unit</em> when to send information from the <em>memory unit</em> to certain <em>output devices</em>.</p>
+<p>A <strong>multicore processor</strong> implements multiple processors on a single integrated-circuit chip and, hence, can perform many operations simultaneously.</p>
+<h2 id="secondary-storage-unit"><span class="header-section-number">4.8</span> Secondary storage unit</h2>
+<p>This is the <em>long-term</em>, <em>high-capacity</em> “warehousing” section.</p>
+<p>Programs or data not actively being used by the other units normally are placed on secondary storage devices (e.g., your hard drive) until they’re again needed.</p>
+<p>Information on secondary storage devices is <strong>persistent</strong> (it’s preserved even when the computer’s power is turned off).</p>
+<p>Secondary storage information takes much longer to access than information in primary memory, but its cost per unit is much less.</p>
+<p>Examples of secondary storage devices include solid-state drives (SSDs), hard drives, DVD drives and USB flash drives, some of which can hold over 2 TB (TB stands for terabytes).</p>
+<h2 id="byte-measurements"><span class="header-section-number">4.9</span> Byte measurements</h2>
+<figure>
+<img src="../img/byte-measurements.png" class="stretch" />
+</figure>
+<h1 id="data-hierarchy" data-background-image="../img/data-hierarchy.png" data-background-size="contain" data-background-repeat="no-repeat"><span class="header-section-number">5</span> Data Hierarchy</h1>
+<h2 id="bits"><span class="header-section-number">5.1</span> Bits</h2>
+<p>A <strong>bit</strong> (short for <strong>“binary digit”</strong>) is the smallest data item in a computer (take value 0 or 1).</p>
+<p>Data items processed by computers form a data hierarchy that becomes larger and more complex in structure as we progress from the simplest data items (<strong>bits</strong>) to richer ones, such as <strong>characters</strong> and <strong>fields</strong>.</p>
+<p>It’s tedious for people to work with data in the low-level form of bits. Instead, they prefer to work with decimal digits (0-9), letters (A-Z and a-z), and special symbols (e.g., $, @, %, &amp;, *, (, ), –, +, &quot;, :, ? and /).</p>
+<figure>
+<img src="../img/data-hierarchy.png" title="fig:Data Hierarchy" alt="Data Hierarchy" class="stretch" /><figcaption>Data Hierarchy</figcaption>
+</figure>
+<h2 id="characters"><span class="header-section-number">5.2</span> Characters</h2>
+<p>Digits, letters and special symbols are known as <strong>characters</strong>.</p>
+<p>Computer’s character set: all the characters used to write programs and represent data items.</p>
+<p>Computers process only 1s and 0s, so a computer’s character set represents every character as a pattern of 1s and 0s.</p>
+<p><strong>Java</strong> uses <a href="https://unicode.org/"><strong>Unicode</strong></a> characters that are composed of one, two or four bytes (8, 16 or 32 bits).</p>
+<p><strong>Unicode</strong> contains characters for many of the world’s languages</p>
+<p><a href="https://en.wikipedia.org/wiki/ASCII"><strong>ASCII</strong></a> (American Standard Code for Information Interchange) character set is the popular subset of Unicode that represents uppercase and lowercase letters, digits and some common special characters.</p>
+<h2 id="fields"><span class="header-section-number">5.3</span> Fields</h2>
+<p>Just as characters are composed of bits, <strong>fields</strong> are composed of characters or bytes.</p>
+<p>A <strong>field</strong> is a group of characters or bytes that conveys meaning. For example, a field consisting of uppercase and lowercase letters can be used to represent a person’s name, and a field cosisting of decimal digits could represent a person’s age.</p>
+<h2 id="records"><span class="header-section-number">5.4</span> Records</h2>
+<p>A <strong>record</strong> is a group of related fields (implemented as a <strong>class</strong> in Java).</p>
+<p><strong>Example: payroll system</strong>. The record for an employee might consist of the following fields (possible types for these fields are shown in parentheses):</p>
+<ul>
+<li>Employee identification number (a whole number)</li>
+<li>Name (a string of characters)</li>
+<li>Address (a string of characters)</li>
+<li>Hourly pay rate (a number with a decimal point)</li>
+</ul>
+<figure>
+<img src="../img/Employee.png" title="fig:Employee UML Class" alt="Employee UML Class" class="stretch" /><figcaption>Employee UML Class</figcaption>
+</figure>
+<p>In the preceding example, all the fields belong to the same employee. A company might have many employees and a payroll record for each.</p>
+<div class="columns">
+<div class="column">
+<pre><code>public class Employee {
+   private int idEmployee;
+   private String name;
+   private String address;
+   private double hourlyPayRate;
+. . .
+}</code></pre>
+</div><div class="column" style="background-image:url(&#39;../img/Employee.png&#39;); background-size:contain; background-position:center; background-repeat:no-repeat;">
+
+</div>
+</div>
+<h2 id="files"><span class="header-section-number">5.5</span> Files</h2>
+<p>A <strong>file</strong> is a <strong>group of related records</strong>.</p>
+<p>More generally, a file contains arbitrary data in arbitrary formats. In some operating systems, a file is viewed simply as a <em>sequence of bytes</em>. Any organization of the bytes in a file, such as organizing the data into records, is a view created by the application programmer.</p>
+<p>It’s not unusual for an organization to have many files, some containing billions, or even trillions, of characters of information.</p>
+<h2 id="database"><span class="header-section-number">5.6</span> Database</h2>
+<blockquote>
+<p>A <strong>database</strong> is a collection of data organized for easy access and manipulation.</p>
+</blockquote>
+<p>The most popular model is the <strong>relational database</strong>, in which data is stored in simple tables. A <strong>table</strong> includes <strong>records</strong> and <strong>fields</strong>.</p>
+<h2 id="big-data"><span class="header-section-number">5.7</span> Big Data</h2>
+<p>The amount of data being produced worldwide is enormous and growing quickly.</p>
+<p><strong>Big data</strong> applications deal with massive amounts of data and this field is growing quickly, creating lots of opportunity for software developers.</p>
+<h1 id="machine-languages-assembly-languages-and-high-level-languages"><span class="header-section-number">6</span> Machine Languages, Assembly Languages and High-Level Languages</h1>
+<h2 id="types-of-programming-languages"><span class="header-section-number">6.1</span> Types of programming languages</h2>
+<p>Programmers write instructions in various programming languages, some directly understandable by computers and others requiring intermediate <em>translation</em> steps. <a href="https://en.wikipedia.org/wiki/List_of_programming_languages_by_type" title="List of programming languages by type">Hundreds of such languages</a> are in use today. These may be divided into three general types:</p>
+<ol type="1">
+<li>Machine languages</li>
+<li>Assembly languages</li>
+<li>High-level languages</li>
+</ol>
+<h2 id="machine-languages"><span class="header-section-number">6.2</span> Machine Languages</h2>
+<p>Any computer can directly understand only its own <strong>machine language</strong>, defined by its hardware design.</p>
+<p>Consist of strings of numbers (ultimately reduced to 1s and 0s) that instruct computers to perform their most elementary operations one at a time.</p>
+<p><strong>Machine dependent</strong> (a particular <a href="https://en.wikipedia.org/wiki/Machine_code">machine language</a> can be used on only one type of computer)</p>
+<h2 id="assembly-languages-and-assemblers"><span class="header-section-number">6.3</span> Assembly Languages and Assemblers</h2>
+<p>Programming in machine language was simply too slow and tedious for most programmers.</p>
+<p>Programmers began using English-like abbreviations to represent elementary operations. These abbreviations formed the basis of <a href="https://en.wikipedia.org/wiki/Assembly_language"><strong>assembly languages</strong></a>.</p>
+<p><strong>Assemblers</strong> (translator programs) were developed to convert early assembly-language programs to machine language at computer speeds.</p>
+<h2 id="high-level-languages-and-compilers"><span class="header-section-number">6.4</span> High-Level Languages and Compilers</h2>
+<p>To speed the programming process, <a href="https://en.wikipedia.org/wiki/High-level_programming_language"><strong>high-level languages</strong></a> were developed in which single statements could be written to accomplish substantial tasks.</p>
+<p>High-level languages allow you to write instructions that look almost like everyday English and contain commonly used mathematical notations.</p>
+<p><a href="https://en.wikipedia.org/wiki/Compiler"><strong>Compilers</strong></a> convert high-level language programs into machine language. <a href="https://labs.jensimmons.com/2016/examples/grace-hopper-page.html"><strong>Grace Hopper</strong></a> invented the first compiler in the early 1950s.</p>
+<h2 id="high-level-languages-and-interpreters"><span class="header-section-number">6.5</span> High-Level Languages and Interpreters</h2>
+<p>Compiling a large high-level language program into machine language can take considerable computer time.</p>
+<p><a href="https://en.wikipedia.org/wiki/Interpreter_(computing)"><strong>Interpreter</strong></a> programs, developed to execute high-level language programs directly, avoid the delay of compilation, although they run slower than compiled programs.</p>
+<p>Java uses a clever performance-tuned mixture of compilation and interpretation to run programs.</p>
+<p><a href="https://en.wikipedia.org/wiki/Portal:Java_(programming_language)"><strong>Java</strong></a> is the world’s most widely used high-level programming language.</p>
+<h1 id="introduction-to-object-technology"><span class="header-section-number">7</span> Introduction to Object Technology</h1>
+<h2 id="objects"><span class="header-section-number">7.1</span> Objects</h2>
+<p><strong>Objects</strong>, or more precisely, the <strong>classes</strong> objects come from, are essentially <strong>reusable</strong> software components.</p>
+<p>There are date objects, time objects, audio objects, video objects, automobile objects, people objects, etc.</p>
+<p>Almost any <strong>noun</strong> can be reasonably represented as a software object in terms of <strong>attributes</strong> (e.g., name, color and size) and <strong>behaviors</strong> (e.g., calculating, moving and communicating).</p>
+<p>Using a modular, object-oriented design and implementation approach can make software-development groups much more productive than was possible with earlier popular techniques like “structured programming”.</p>
+<p>Object-oriented programs are often easier to understand, correct and modify.</p>
+<h2 id="automobile-as-an-object"><span class="header-section-number">7.2</span> Automobile as an Object</h2>
+<blockquote>
+<p>A simple analogy: Suppose you want to <em>drive a car and make it go faster by pressing its accelerator pedal</em>.</p>
+</blockquote>
+<ul>
+<li><p>Before you can drive a car, someone has to design it.</p></li>
+<li><p>A car typically begins as engineering drawings, similar to the blueprints that describe the design of a house.</p></li>
+<li><p>These drawings include the design for an accelerator pedal.</p></li>
+<li><p>Pedal <strong>hides</strong> from the driver the complex mechanisms that actually make the car go faster, just as the brake pedal “hides” the mechanisms that slow the car, and the steering wheel “hides” the mechanisms that turn the car.</p></li>
+<li><p>This enables people with little or no knowledge of how engines, braking and steering mechanisms work to drive a car easily.</p></li>
+<li><p>Just as you cannot cook meals in the kitchen of a blueprint, you cannot drive a car’s engineering drawings.</p></li>
+<li><p>Before you can drive a car, it must be built from the engineering drawings that describe it.</p></li>
+<li><p>A completed car has an actual accelerator pedal to make it go faster, but even that’s not enough—the car won’t accelerate on its own (hopefully!), so the driver must press the pedal to accelerate the car.</p></li>
+</ul>
+<h2 id="methods-and-classes"><span class="header-section-number">7.3</span> Methods and Classes</h2>
+<p>Let’s use the car example to introduce some key object-oriented programming concepts.</p>
+<div class="incremental">
+<ul class="incremental">
+<li>Performing a task in a program requires a <strong>method</strong>.</li>
+<li>The method houses the program statements that actually perform its tasks.</li>
+<li>The method <strong>hides</strong> these statements from its user, just as the accelerator pedal of a car hides from the driver the mechanisms of making the car go faster.</li>
+</ul>
+</div>
+<ul>
+<li>In Java, we create a program unit called a <strong>class</strong> to house the set of methods that perform the class’s tasks.</li>
+<li>A class is similar in concept to a car’s engineering drawings, which house the design of an accelerator pedal, steering wheel, and so on.</li>
+</ul>
+<h2 id="instantiation"><span class="header-section-number">7.4</span> Instantiation</h2>
+<p>Just as someone has to <em>build a car</em> from its engineering drawings before you can actually drive a car, you must <strong>build an object</strong> of a class before a program can perform the tasks that the class’s methods define.</p>
+<p>The process of doing this is called <strong>instantiation</strong>.</p>
+<p>An object is then referred to as an <strong>instance</strong> of its class.</p>
+<h2 id="reuse"><span class="header-section-number">7.5</span> Reuse</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Just as a car’s engineering drawings can be <em>reused</em> many times to build many cars, you can <strong>reuse a class</strong> many times to build many objects.</li>
+<li>Reuse of existing classes when building new classes and programs saves time and effort.</li>
+<li>Reuse also helps you build more reliable and effective systems, because existing classes and components often have undergone extensive <em>testing, debugging and performance</em> tuning.</li>
+</ul>
+</div>
+<ul>
+<li>Just as the notion of <em>interchangeable parts</em> was crucial to the Industrial Revolution, reusable classes are crucial to the software revolution that has been spurred by object technology.</li>
+</ul>
+<blockquote>
+<p>Use a building-block approach to creating your programs. Avoid reinventing the wheel, use existing high-quality pieces wherever possible. This software reuse is a key benefit of object-oriented programming.</p>
+</blockquote>
+<h2 id="messages-and-method-calls"><span class="header-section-number">7.6</span> Messages and Method Calls</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>When you drive a car, pressing its gas pedal sends a <strong>message</strong> to the car to perform a task, that is, to go faster.</li>
+<li>Similarly, you <strong>send messages to an object</strong>.</li>
+<li>Each message is implemented as a <strong>method call</strong> that tells a method of the object to perform its task.</li>
+</ul>
+</div>
+<h2 id="attributes-and-instance-variables"><span class="header-section-number">7.7</span> Attributes and Instance Variables</h2>
+<ul>
+<li>A car has attributes (color, number of doors, amount of gas in its tank, its current speed, …)</li>
+<li>The car’s attributes are represented as part of its design in its engineering diagrams.</li>
+<li>Every car maintains its own attributes.</li>
+<li><p>For example, each car knows how much gas is in its own gas tank, but not how much is in the tanks of other cars.</p></li>
+<li>An object has attributes that it carries along as it’s used in a program.</li>
+<li>These attributes are specified as part of the object’s class.</li>
+<li>For example, a bank-account object has a balance attribute that represents the amount of money in the account. Each bank-account object knows the balance in the account it represents, but not the balances of the other accounts in the bank.</li>
+<li><p>Attributes are specified by the class’s <strong>instance variables</strong>.</p></li>
+</ul>
+<h2 id="encapsulation-and-information-hiding"><span class="header-section-number">7.8</span> Encapsulation and Information Hiding</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Classes (and their objects) <strong>encapsulate</strong>, i.e., encase, their attributes and methods. A class’s (and its object’s) attributes and methods are intimately related.</li>
+<li>Objects may communicate with one another, but they’re normally not allowed to know how other objects are implemented, implementation details can be <em>hidden</em> within the objects themselves.</li>
+<li>This <strong>information hiding</strong>, as we’ll see, is crucial to good software engineering.</li>
+</ul>
+</div>
+<h2 id="inheritance"><span class="header-section-number">7.9</span> Inheritance</h2>
+<ul>
+<li><p>A new class of objects can be created conveniently by <strong>Inheritance</strong>, the new class (called the <strong>subclass</strong>) starts with the characteristics of an existing class (called the <strong>superclass</strong>), possibly customizing them and adding unique characteristics of its own.</p></li>
+<li><p>In our car analogy, an object of class “convertible” certainly is an object of the more general class “automobile”, but more specifically, the roof can be raised or lowered.</p></li>
+</ul>
+<h2 id="interfaces"><span class="header-section-number">7.10</span> Interfaces</h2>
+<p>Java also supports <strong>interfaces</strong>, collections of related methods that typically enable you to tell objects <strong>what</strong> to do, but not <strong>how</strong> to do it.</p>
+<ul>
+<li><p>A “basic-driving capabilities” interface consisting of a steering wheel, an accelerator pedal and a brake pedal would enable a driver to tell the car what to do.</p></li>
+<li><p>Once you know how to use this interface for turning, accelerating and braking, you can drive many types of cars, even though manufacturers may implement these systems differently.</p></li>
+<li><p>A class <strong>implements</strong> zero or more interfaces, each of which can have one or more methods, just as a car implements separate interfaces for basic driving functions, controlling the radio, controlling the heating and air conditioning systems.</p></li>
+<li><p>Just as car manufacturers implement capabilities <em>differently</em>, classes may implement an interface’s methods <em>differently</em>.</p></li>
+</ul>
+<h2 id="object-oriented-analysis-and-design"><span class="header-section-number">7.11</span> Object-Oriented Analysis and Design</h2>
+<p>For projects so large and complex, you should not simply sit down and start writing programs.</p>
+<div class="incremental">
+<ul class="incremental">
+<li>To create the best solutions, you should follow a detailed <strong>analysis</strong> process:
+<ul class="incremental">
+<li>for determining your project’s <strong>requirements</strong> (defining what the system is supposed to do) and</li>
+<li>developing a <strong>design</strong> that satisfies them (specifying how the system should do it).</li>
+</ul></li>
+</ul>
+</div>
+<ul>
+<li>Carefully review the design (and have your design reviewed by other software professionals) before writing any code.</li>
+</ul>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Analyzing and designing your system from an object-oriented point of view, it’s called an <strong>object-oriented analysis-and-design (OOAD) process</strong>.</p></li>
+<li><strong>Object-oriented programming (OOP)</strong>, like Java, allows you to implement an object-oriented design as a working system.</li>
+</ul>
+</div>
+<h2 id="uml-unified-modeling-language"><span class="header-section-number">7.12</span> UML (Unified Modeling Language)</h2>
+<p>The <a href="https://en.wikipedia.org/wiki/Unified_Modeling_Language"><strong>Unified Modeling Language (UML)</strong></a> is now the most widely used graphical scheme for modeling object-oriented systems.</p>
+<p><a href="http://www.uml.org/"><img src="../img/440px-UML_logo.svg.png" class="stretch" /></a></p>
+<h1 id="operating-systems"><span class="header-section-number">8</span> Operating Systems</h1>
+<h2 id="what-is-an-operating-system"><span class="header-section-number">8.1</span> What is an Operating System?</h2>
+<p><strong>Operating systems</strong> are software systems that make using computers more convenient for users, application developers and system administrators.</p>
+<div class="incremental">
+<ul class="incremental">
+<li>Provide services that allow each application to execute safely, efficiently and concurrently (i.e., in parallel) with other applications.</li>
+<li>The software that contains the core components of the operating system is called the <strong>kernel</strong>.</li>
+</ul>
+</div>
+<h2 id="popular-operating-systems"><span class="header-section-number">8.2</span> Popular Operating Systems</h2>
+<ul>
+<li><p>Popular desktop operating systems include <strong>Linux</strong>, <strong>Windows</strong> and <strong>macOS</strong> (formerly called OS X)</p></li>
+<li><p>The most popular mobile operating systems used in smartphones and tablets are Google’s <strong>Android</strong> and Apple’s <strong>iOS</strong> (for iPhone, iPad and iPod Touch devices)</p></li>
+</ul>
+<h2 id="windows"><span class="header-section-number">8.3</span> Windows</h2>
+<p>Microsoft developed (mid-1980s) the <a href="https://en.wikipedia.org/wiki/Microsoft_Windows_version_history" title="Microsoft Windows version history">Windows</a> operating system, consisting of a graphical user interface (<strong>GUI</strong>) built on top of <strong>DOS</strong> (Disk Operating System)—an enormously popular personal-computer operating system that users interacted with by typing commands.</p>
+<p>Windows borrowed from many concepts (such as icons, menus and windows) developed by Xerox PARC and popularized by early Apple Macintosh operating systems.</p>
+<p>Windows 10 is Microsoft’s latest operating system—its features include enhancements to the Start menu and user interface, Cortana personal assistant for voice interactions, Action Center for receiving notifications, Microsoft’s new Edge web browser, and more.</p>
+<p>Is a <em>proprietary</em> operating system—it’s controlled by Microsoft exclusively.</p>
+<p>By far the world’s most widely used desktop operating system.</p>
+<h2 id="linux"><span class="header-section-number">8.4</span> Linux</h2>
+<p><a href="https://en.wikipedia.org/wiki/Linux"><strong>Linux operating system</strong></a> is perhaps the greatest success of the <a href="https://en.wikipedia.org/wiki/Open-source_software_movement"><em>open-source</em> movement</a> (<a href="https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy">GNU/Linux naming controversy</a>)</p>
+<p><a href="https://en.wikipedia.org/wiki/Open-source_software"><strong>Open-source software</strong></a> departs from the proprietary software development style that dominated software’s early years.</p>
+<p>With open-source development, individuals and companies <em>contribute</em> their efforts in developing, maintaining and evolving software in exchange for the right to use that software for their own purposes, typically at <em>no charge</em>.</p>
+<p>Open-source code is often scrutinized by a much larger audience than proprietary software, so errors often get removed faster.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Linux_kernel"><strong>Linux kernel</strong></a> is the core of the most popular open-source, freely distributed, fullfeatured operating system.</p>
+<p>It’s developed by a loosely organized team of volunteers.</p>
+<p>Linux has become extremely popular on servers and in embedded systems, such as Google’s Android-based smartphones.</p>
+<h2 id="apples-macos-and-ios"><span class="header-section-number">8.5</span> Apple’s macOS and iOS</h2>
+<p><a href="https://en.wikipedia.org/wiki/Apple_Inc.">Apple</a>, founded in 1976 by Steve Jobs and Steve Wozniak, quickly became a leader in personal computing.</p>
+<p>Apple’s proprietary operating system, <a href="https://en.wikipedia.org/wiki/IOS">iOS</a>, is derived from Apple’s <a href="https://en.wikipedia.org/wiki/MacOS">macOS</a> and is used in the iPhone, iPad, iPod Touch, Apple Watch and Apple TV devices.</p>
+<p>In 2014, Apple introduced its new <a href="https://en.wikipedia.org/wiki/Swift_(programming_language)">Swift programming language</a>, which became open source in 2015. The iOS app-development community is shifting from Objective-C to Swift.</p>
+<h2 id="googles-android"><span class="header-section-number">8.6</span> Google’s Android</h2>
+<p><a href="https://en.wikipedia.org/wiki/Android_(operating_system)"><strong>Android</strong></a> is based on the Linux kernel and Java.</p>
+<p>Android apps can also be developed in C++ and C.</p>
+<p>One benefit of developing Android apps is the openness of the platform. The operating system is open source and free.</p>
+<p>Developed by Android, Inc., which was acquired by Google in 2005.</p>
+<h1 id="programming-languages"><span class="header-section-number">9</span> Programming Languages</h1>
+<h2 id="some-programming-languages"><span class="header-section-number">9.1</span> Some programming languages</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Ada_(programming_language)">Ada</a></li>
+<li><a href="https://en.wikipedia.org/wiki/BASIC">Basic</a></li>
+<li><a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a></li>
+<li><a href="https://en.wikipedia.org/wiki/C%2B%2B">C++</a></li>
+<li><a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)">C#</a></li>
+<li><a href="https://en.wikipedia.org/wiki/COBOL">COBOL</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Fortran">Fortran</a></li>
+<li><p><a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a></p></li>
+<li><a href="https://en.wikipedia.org/wiki/Objective-C">Objective-C</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Pascal_(programming_language)">Pascal</a></li>
+<li><a href="https://en.wikipedia.org/wiki/PHP">PHP</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Ruby_on_Rails">Ruby on Rails</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Scala_(programming_language)">Scala</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Swift_(programming_language)">Swift</a></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Visual_Basic">Visual Basic</a></p></li>
+</ul>
+<h2 id="java-1"><span class="header-section-number">9.2</span> Java</h2>
+<ul>
+<li><p><strong>Microprocessors</strong> have had a profound impact in intelligent consumer-electronic devices, including the recent explosion in the <strong>“Internet of Things”</strong>.</p></li>
+<li><p><strong>Sun Microsystems</strong> in <strong>1991</strong> funded an internal corporate research project, called <em>Oak</em>, led by <strong>James Gosling</strong>, which resulted in a C++ based object-oriented programming language that Sun called <a href="https://en.wikipedia.org/wiki/Java_%28programming_language%29#History">Java</a>.</p></li>
+<li><p>Using <a href="http://oracle.com.edgesuite.net/timeline/java/" title="Java History Timeline"><strong>Java</strong></a>, you can write programs that will run on a great variety of computer systems and computer-controlled devices. <strong>“write once, run anywhere”</strong>.</p></li>
+<li>Java drew the attention of the business community because of the phenomenal interest in the Internet. It’s now used:
+<ul>
+<li>to develop large-scale enterprise applications,</li>
+<li>to enhance the functionality of web servers (computers that provide the content we see in web browsers),</li>
+<li>to provide applications for consumer devices (cell phones, smart-phones, television set-top boxes,…),</li>
+<li>to develop robotics software and for many other purposes.</li>
+</ul></li>
+<li><p>It’s also the key language for developing Android smartphone and tablet apps.</p></li>
+<li><p>Sun Microsystems was acquired by Oracle in 2010.</p></li>
+<li><p>Java has become the most widely used general-purpose programming language with more than 10 million developers.</p></li>
+<li><p><a href="http://oracle.com.edgesuite.net/timeline/java/"><strong>Java History Timeline</strong></a></p></li>
+</ul>
+<h2 id="java-class-libraries"><span class="header-section-number">9.3</span> Java Class Libraries</h2>
+<blockquote>
+<p>You can create each class and method you need to form your programs. However, most Java programmers take advantage of the rich collections of existing classes and methods in the <strong>Java class libraries</strong>, also known as the <strong><a href="https://www.oracle.com/technetwork/java/api-141528.html">Java APIs</a> (Application Programming Interfaces)</strong>.</p>
+</blockquote>
+<h1 id="a-typical-java-development-environment"><span class="header-section-number">10</span> A Typical Java Development Environment</h1>
+<h2 id="five-phases"><span class="header-section-number">10.1</span> Five phases</h2>
+<div class="columns">
+<div class="column">
+<p>Normally there are five phases to <em>create and execute</em> a <strong>Java application</strong>:</p>
+<ol type="1">
+<li>edit,</li>
+<li>compile,</li>
+<li>load,</li>
+<li>verify and</li>
+<li>execute</li>
+</ol>
+</div><div class="column" style="background-image:url(&#39;../img/5steps-java.png&#39;); background-size:contain; background-position:center; background-repeat:no-repeat;">
+
+</div>
+</div>
+<figure>
+<img src="../img/5steps-java.png" title="fig:" alt="Five steps to create and execute a Java application" class="stretch" /><figcaption>Five steps to create and execute a Java application</figcaption>
+</figure>
+<h2 id="phase-1-creating-a-program"><span class="header-section-number">10.2</span> Phase 1: Creating a Program</h2>
+<figure>
+<img src="../img/phase1-edit.png" class="stretch" />
+</figure>
+<ul>
+<li>Type a Java program, the <strong>source code</strong></li>
+<li>Make any necessary corrections</li>
+<li>Save it on a secondary storage device</li>
+<li>A file name with <strong>.java</strong> contains Java source code</li>
+<li>Two editors widely used on Linux: <a href="https://en.wikipedia.org/wiki/Vi">vi</a> and <a href="https://en.wikipedia.org/wiki/Emacs">emacs</a></li>
+<li>macOS provides <a href="https://en.wikipedia.org/wiki/TextEdit">TextEdit</a></li>
+<li>Windows: <a href="https://en.wikipedia.org/wiki/Microsoft_Notepad">Notepad</a>, <a href="https://notepad-plus-plus.org/">Notepad++</a></li>
+</ul>
+<p>The most popular <strong>Java IDEs</strong> are:</p>
+<ul>
+<li><a href="http://www.eclipse.org">Eclipse</a></li>
+<li><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a></li>
+<li><a href="http://www.netbeans.org">NetBeans</a></li>
+</ul>
+<h2 id="phase-2-compiling-a-java-program-into-bytecodes"><span class="header-section-number">10.3</span> Phase 2: Compiling a Java Program into Bytecodes</h2>
+<figure>
+<img src="../img/phase2-compile.png" class="stretch" />
+</figure>
+<ul>
+<li>Use the command <strong>javac</strong> (Java compiler) to compile a program.</li>
+<li>For example, to compile a program called “<code>Welcome.java</code>”, you’d type in your system’s command line:</li>
+</ul>
+<pre><code>javac Welcome.java</code></pre>
+<ul>
+<li><p>If the program compiles, the compiler produces a <strong>.class</strong> file called “<code>Welcome.class</code>”</p></li>
+<li>IDEs typically provide a menu item, such as <strong>Build</strong> or <strong>Make</strong>, that invokes the <strong>javac</strong> command for you.</li>
+<li>If the compiler detects errors, you’ll need to go back to Phase 1 and correct them.</li>
+<li>Java compiler translates Java source code into <strong>bytecodes</strong> that represent the tasks to execute (<em>Phase 5</em>).</li>
+<li><p>The <strong>Java Virtual Machine (JVM)</strong>, a part of the JDK and the foundation of the Java platform, executes bytecodes.</p></li>
+<li>If the same VM is implemented on many computer platforms, applications written for that type of VM can be used on all those platforms.</li>
+<li><p>The JVM is one of the most widely used virtual machines. Microsoft’s <strong>.NET</strong> uses a similar virtual-machine architecture.</p></li>
+<li><p>Machine-language instructions are platform dependent (dependent on specific computer hardware), <strong>bytecode</strong> instructions are <strong>platform independent</strong>.</p></li>
+<li><p>So, Java’s bytecodes are <strong>portable</strong>, without recompiling the source code, the same bytecode instructions can execute on any platform containing a JVM that understands the version of Java in which the bytecodes were compiled.</p></li>
+<li><p>The JVM is invoked by the java command. For example:</p></li>
+</ul>
+<pre><code>java Welcome</code></pre>
+<p>This begins Phase 3. IDEs typically provide a menu item, such as <strong>Run</strong>, that invokes the java command for you.</p>
+<p><a href="http://bonkersworld.net/one-last-time" title="http://bonkersworld.net/one-last-time">Compiling joke</a></p>
+<figure>
+<img src="../img/one_last_time.png" class="stretch" />
+</figure>
+<h2 id="phase-3-loading-a-program-into-memory"><span class="header-section-number">10.4</span> Phase 3: Loading a Program into Memory</h2>
+<figure>
+<img src="../img/phase3-load.png" class="stretch" />
+</figure>
+<ul>
+<li><p>The JVM places the program in memory to execute it, this is known as <strong>loading</strong></p></li>
+<li><p>The JVM’s <strong>class loader</strong> takes the “<code>.class</code>” files containing the program’s bytecodes and transfers them to primary memory.</p></li>
+<li><p>Also loads any of the “<code>.class</code>” files provided by Java that your program uses.</p></li>
+<li><p>The “<code>.class</code>” files can be loaded from a disk on your system or over a network.</p></li>
+</ul>
+<h2 id="phase-4-bytecode-verification"><span class="header-section-number">10.5</span> Phase 4: Bytecode Verification</h2>
+<figure>
+<img src="../img/phase4-verify.png" class="stretch" />
+</figure>
+<ul>
+<li><p>In Phase 4, as the classes are loaded, the <strong>bytecode verifier</strong> examines their bytecodes to ensure that they’re valid and do not violate Java’s security restrictions.</p></li>
+<li><p>Java enforces strong security to make sure that Java programs arriving over the network do not damage your files or your system (as computer viruses and worms might).</p></li>
+</ul>
+<h2 id="phase-5-execution"><span class="header-section-number">10.6</span> Phase 5: Execution</h2>
+<figure>
+<img src="../img/phase5-execute.png" class="stretch" />
+</figure>
+<ul>
+<li><p>JVM <strong>executes</strong> the bytecodes to perform the program’s specified actions.</p></li>
+<li><p>In early Java versions, the JVM was simply a Java-bytecode interpreter. Most programs would execute slowly, because the JVM would interpret and execute one bytecode at a time. Some modern computer architectures can execute several instructions in parallel.</p></li>
+<li><p>Today’s JVMs typically execute bytecodes using a combination of <em>interpretation</em> and <strong>just-in-time (JIT) compilation</strong>.</p></li>
+<li><p>In this process, the JVM analyzes the bytecodes as they’re interpreted, searching for <strong>hot spots</strong> (bytecodes that execute frequently).</p></li>
+<li><p>For these parts, a just-in-time (JIT) compiler, such as Oracle’s <strong>Java HotSpot<sup>TM</sup> compiler</strong>, translates the bytecodes into the computer’s machine language.</p></li>
+<li>When the JVM encounters these compiled parts again, the faster machine-language code executes. Thus programs actually go through <strong>two compilation phases</strong>:
+<ul>
+<li>one in which Java code is translated into bytecodes (for portability across JVMs on different computer platforms)</li>
+<li>and a second in which, during execution, the bytecodes are translated into machine language for the computer on which the program executes.</li>
+</ul></li>
+</ul>
+<h2 id="problems-that-may-occur-at-execution-time"><span class="header-section-number">10.7</span> Problems That May Occur at Execution Time</h2>
+<div class="columns">
+<div class="column">
+<blockquote>
+<p>Programs might not work on the first try.</p>
+</blockquote>
+<p><br /><br /></p>
+<p><a href="http://vic.bg/jokes/i-can-39-t-believe-it-worked-first-time" title="http://vic.bg/jokes/i-can-39-t-believe-it-worked-first-time">Image Reference</a></p>
+</div><div class="column" style="background-image:url(&#39;../img/novice-programmer.jpg&#39;); background-size:contain; background-position:center; background-repeat:no-repeat;">
+
+</div>
+</div>
+<figure>
+<img src="../img/novice-programmer.jpg" class="stretch" />
+</figure>
+<ul>
+<li><p>Each of the preceding phases can fail because of various errors.</p></li>
+<li><p>This would cause the Java program to display an error message.</p></li>
+<li><p>So, you’d return to the edit phase, make the necessary corrections and proceed through the remaining phases again to determine whether the corrections fixed the problem(s).</p></li>
+<li><p>Errors such as division by zero occur as a program runs, so they’re called <strong>runtime errors</strong> or <strong>execution-time errors</strong>.</p>
+<ul>
+<li><p><strong>Fatal runtime errors</strong> cause programs to terminate immediately without having successfully performed their jobs.</p></li>
+<li><p><strong>Nonfatal runtime errors</strong> allow programs to run to completion, often producing incorrect results.</p></li>
+</ul></li>
+</ul>
+<h1 id="internet-and-world-wide-web"><span class="header-section-number">11</span> Internet and World Wide Web</h1>
+<h2 id="arpanet"><span class="header-section-number">11.1</span> ARPANET</h2>
+<p>In the late 1960s, <strong>ARPA</strong>—the Advanced Research Projects Agency of the United States Department of Defense—rolled out plans for networking the main computer systems of approximately a dozen ARPA-funded universities and research institutions.</p>
+<p>The computers were to be connected with communications lines operating at speeds on the order of 50,000 bits per second, a stunning rate at a time when most people (of the few who even had networking access) were connecting over telephone lines to computers at a rate of 110 bits per second.</p>
+<p>Academic research was about to take a giant leap forward.</p>
+<p>ARPA proceeded to implement what quickly became known as the <a href="https://en.wikipedia.org/wiki/ARPANET"><strong>ARPANET</strong></a>, the precursor to today’s Internet.</p>
+<p>Things worked out differently from the original plan.</p>
+<p>Although the ARPANET enabled researchers to network their computers, its main benefit proved to be the capability for quick and easy communication via what came to be known as electronic mail (<strong>e-mail</strong>).</p>
+<p>This is true even on today’s Internet, with e-mail, instant messaging, file transfer and social media such as Facebook and Twitter enabling billions of people worldwide to communicate quickly and easily.</p>
+<p>The protocol (set of rules) for communicating over the ARPANET became known as the <a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol"><strong>Transmission Control Protocol (TCP)</strong></a>. TCP ensured that messages, consisting of sequentially numbered pieces called <strong>packets</strong>, were properly routed from sender to receiver, arrived intact and were assembled in the correct order.</p>
+<h2 id="internet-a-network-of-networks"><span class="header-section-number">11.2</span> Internet: A Network of Networks</h2>
+<p>In parallel with the early evolution of the Internet, organizations worldwide were implementing their own networks for both <em>intraorganization</em> (that is, within an organization) and <em>interorganization</em> (that is, between organizations) communication.</p>
+<p>A huge variety of <em>networking hardware and software</em> appeared. One challenge was to <strong>enable these different networks to communicate with each other</strong>.</p>
+<p>The combined set of protocols is now called <a href="https://en.wikipedia.org/wiki/Internet_protocol_suite"><strong>TCP/IP</strong></a>. Each Internet-connected device has an <a href="https://en.wikipedia.org/wiki/IP_address"><strong>IP address</strong></a>—a unique numerical identifier used by devices communicating via TCP/IP to locate one another on the Internet.</p>
+<p>Businesses rapidly realized that by using the Internet, they could improve their operations and offer new and better services to their clients.<br> Companies started spending large amounts of money to develop and enhance their Internet presence. This generated fierce competition among communications carriers and hardware and software suppliers to meet the increased infrastructure demand.</p>
+<p>As a result, <a href="https://en.wikipedia.org/wiki/Bandwidth_(computing)"><strong>bandwidth</strong></a>—the information-carrying capacity of communications lines—on the Internet has increased tremendously, while hardware costs have plummeted.</p>
+<h2 id="world-wide-web-making-the-internet-user-friendly"><span class="header-section-number">11.3</span> World Wide Web: Making the Internet User-Friendly</h2>
+<p>The <a href="https://en.wikipedia.org/wiki/World_Wide_Web"><strong>World Wide Web</strong></a> (simply called “the web”) is a collection of hardware and software associated with the Internet that allows computer users to locate and view documents (with various combinations of text, graphics, animations, audios and videos) on almost any subject.</p>
+<p>In 1989, <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee"><strong>Tim Berners-Lee</strong></a> of <a href="https://en.wikipedia.org/wiki/CERN">CERN</a> (the European Organization for Nuclear Research) began developing HyperText Markup Language (<a href="https://en.wikipedia.org/wiki/HTML">HTML</a>)—the technology for sharing information via “hyperlinked” text documents.</p>
+<p>Berners-Lee also wrote communication protocols such as HyperText Transfer Protocol (<a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a>) to form the backbone of his new hypertext information system, which he referred to as the World Wide Web.</p>
+<p>In 1994, he founded the World Wide Web Consortium <a href="https://www.w3.org/">W3C</a> devoted to developing web technologies. One of the W3C’s primary goals is to make the web universally accessible to everyone regardless of disabilities, language or culture.</p>
+<h2 id="web-services-and-mashups"><span class="header-section-number">11.4</span> Web Services and Mashups</h2>
+<p>The applications-development methodology of <a href="https://en.wikipedia.org/wiki/Mashup_(web_application_hybrid)"><strong>mashups</strong></a> enables you to rapidly develop powerful software applications by combining (often free) complementary web services and other forms of information feeds.</p>
+<p><a href="http://www.programmableweb.com/">ProgrammableWeb</a> provides a directory of over 16,500 APIs and 6,300 mashups. Their <a href="https://www.programmableweb.com/api-university">API University</a> includes how-to guides and sample code for working with APIs and creating your own mashups. According to their website, some of the most widely used APIs are Facebook, GoogleMaps, Twitter and YouTube.</p>
+<table>
+<caption>Some popular <a href="https://www.programmableweb.com/category/all/apis"><strong>web services</strong></a></caption>
+<thead>
+<tr class="header">
+<th>Web services source</th>
+<th>How it’s used</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Google Maps</td>
+<td>Mapping services</td>
+</tr>
+<tr class="even">
+<td>Twitter</td>
+<td>Microblogging</td>
+</tr>
+<tr class="odd">
+<td>YouTube</td>
+<td>Video search</td>
+</tr>
+<tr class="even">
+<td>Facebook</td>
+<td>Social networking</td>
+</tr>
+<tr class="odd">
+<td>Instagram</td>
+<td>Photo sharing</td>
+</tr>
+<tr class="even">
+<td>LinkedIn</td>
+<td>Social networking for business</td>
+</tr>
+<tr class="odd">
+<td>PayPal</td>
+<td>Payments</td>
+</tr>
+</tbody>
+</table>
+<h2 id="internet-of-things"><span class="header-section-number">11.5</span> Internet of Things</h2>
+<ul>
+<li><p>A thing is any object with an <a href="https://en.wikipedia.org/wiki/IP_address"><strong>IP address</strong></a> and the ability to send data automatically over the Internet. Such things include:</p>
+<ul>
+<li>a car with a transponder for paying tolls,</li>
+<li>a heart monitor implanted in a human,</li>
+<li>smart thermostats that adjust room temperatures based on weather forecasts and activity in the home</li>
+<li>and many more.</li>
+</ul></li>
+</ul>
+<h1 id="software-technologies"><span class="header-section-number">12</span> Software Technologies</h1>
+<h2 id="technologies"><span class="header-section-number">12.1</span> Technologies</h2>
+<p>List of buzzwords that you’ll hear in the software development community:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Agile_software_development"><strong>Agile software development</strong></a> is a set of methodologies that try to get software implemented faster and using fewer resources (<a href="www.agilealliance.org">Agile Alliance</a>, <a href="www.agilemanifesto.org">the Agile Manifesto</a>).</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Code_refactoring"><strong>Refactoring</strong></a> involves reworking programs to make them clearer and easier to maintain while preserving their correctness and functionality. It’s widely employed with agile development methodologies. Many IDEs contain built-in refactoring tools to do major portions of the reworking automatically.</p></li>
+<li><a href="https://en.wikipedia.org/wiki/Design_Patterns"><strong>Design patterns</strong></a> are proven architectures for constructing flexible and maintainable object-oriented software. The field of design patterns tries to enumerate those recurring patterns, encouraging software designers to reuse them to develop better-quality software using less time, money and effort.</li>
+<li><p><a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)"><strong>LAMP</strong></a> is an acronym for the open-source technologies that many developers use to build web applications—it stands for <a href="https://en.wikipedia.org/wiki/Linux">Linux</a>, <a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server">Apache</a>, <a href="https://en.wikipedia.org/wiki/MySQL">MySQL</a> (or <a href="https://en.wikipedia.org/wiki/MariaDB">MariaDB</a>) and <a href="https://en.wikipedia.org/wiki/PHP">PHP</a> (or <a href="https://en.wikipedia.org/wiki/Perl">Perl</a> or <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a>—two other popular scripting languages). <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)#WAMP">WAMP</a> for Windows.</p></li>
+<li>Software has generally been viewed as a product. With <a href="https://en.wikipedia.org/wiki/Software_as_a_service"><strong>Software as a Service (SaaS)</strong></a>, the software runs on servers elsewhere on the Internet. When that server is updated, all clients worldwide see the new capabilities (no local installation is needed). You access the service through a browser.</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Platform_as_a_service"><strong>Platform as a Service (PaaS)</strong></a> provides a computing platform for developing and running applications as a service over the web, rather than installing the tools on your computer. Some PaaS providers are <a href="https://en.wikipedia.org/wiki/Google_App_Engine">Google App Engine</a>, <a href="https://en.wikipedia.org/wiki/Amazon_Elastic_Compute_Cloud">Amazon EC2</a> and <a href="https://en.wikipedia.org/wiki/Microsoft_Azure">Windows Azure</a>.</p></li>
+<li><a href="https://en.wikipedia.org/wiki/Software_as_a_service">SaaS</a> and <a href="https://en.wikipedia.org/wiki/Platform_as_a_service">PaaS</a> are examples of <a href="https://en.wikipedia.org/wiki/Cloud_computing"><strong>cloud computing</strong></a>. Software and data stored in the “cloud” allows you to increase or decrease computing resources which is more cost effective than purchasing hardware to provide enough storage and processing power to meet occasional peak demands. Cloud computing also saves money by shifting to the service provider the burden of managing these apps (installing and upgrading the software, security, backups and disaster recovery).</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Software_development_kit"><strong>Software Development Kits (SDKs)</strong></a> include tools and documentation developers use to program applications.</p></li>
+</ul>
+<h2 id="software-product-release-terminology"><span class="header-section-number">12.2</span> Software product-release terminology</h2>
+<p>Software is complex. Large, real-world software applications can take many months or even years to design and implement.</p>
+<p>When large software products are under development, they typically are made available to the user communities as a series of releases, each more complete and polished than the last.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Software_release_life_cycle#Alpha"><strong>Alpha</strong></a> software is the earliest release of a software product that’s still under active development. Alpha versions are often buggy, incomplete and unstable and are released to a relatively small number of developers for testing new features, getting early feedback, etc. Alpha software also is called early access software.</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Software_release_life_cycle#Beta"><strong>Beta</strong></a> versions are released to a larger number of developers later in the development process after most major bugs have been fixed and new features are nearly complete. Beta software is more stable, but still subject to change.</p></li>
+<li><a href="https://en.wikipedia.org/wiki/Software_release_life_cycle#Release_candidate"><strong>Release candidates</strong></a> are generally feature complete, (mostly) bug free and ready for use by the community, which provides a diverse testing environment.</li>
+<li><strong>Final Release</strong>: any bugs that appear in the release candidate are corrected, and eventually the final product is released to the general public. Software companies often distribute incremental updates over the Internet.</li>
+<li><p><strong>Continuous Beta</strong>: software that’s developed using this approach (i.e., Google search or Gmail) generally does not have version numbers. It’s hosted in the cloud and is constantly evolving (users have the latest version).</p></li>
+</ul>
+<h1 id="getting-your-questions-answered" data-background-image="../img/java-community.png" data-background-size="contain" data-background-repeat="no-repeat"><span class="header-section-number">13</span> Getting Your Questions Answered</h1>
+<h2 id="online-forums"><span class="header-section-number">13.1</span> Online forums</h2>
+<p>There are many online forums in which you can get your Java questions answered and interact with other Java programmers. Some popular Java and general programming forums include:</p>
+<ul>
+<li><a href="https://stackoverflow.com/">StackOverflow.com</a></li>
+<li><a href="https://coderanch.com/">Coderanch.com</a></li>
+<li><a href="https://community.oracle.com/community/java">The Oracle Java Forum</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/32-java/">&lt;/dream.in.code&gt;</a></li>
+</ul>
+<figure>
+<img src="../img/java-community.png" class="stretch" />
+</figure>
+<p>
+  <a href="#" class="back-to-top"><img src="../img/duke-go.png" alt="back to top" title="Back to Top" /></a>
+</p>
+</body>
+</html>

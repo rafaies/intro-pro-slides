@@ -1,0 +1,21 @@
+/* Using jQuery to add a dynamic “Back To Top” floating button with smooth scroll
+http://www.developerdrive.com/2013/07/using-jquery-to-add-a-dynamic-back-to-top-floating-button-with-smooth-scroll/
+*/
+
+.back-to-top {
+    position: fixed;
+    bottom: 2em;
+    right: 25px;
+    text-decoration: none;
+    color: #000000;
+    /* background-color: rgba(235, 235, 235, 0.80);*/
+    font-size: 12px;
+    padding: 1em;
+    display: none;
+}
+
+.back-to-top:hover {    
+    background-color: rgba(135, 135, 135, 0.50);
+}
+
+
